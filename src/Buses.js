@@ -32,8 +32,7 @@ export default Buses;
 function Departure(props) {
   const { data } = props;
   let depTime = data.expectedDepartureTime;
-  depTime = depTime.slice(11, 19);
-
+  depTime = depTime.slice(11, 16);
   return (
     <div className="departure">
       {data.serviceJourney.journeyPattern.line.publicCode} -{" "}

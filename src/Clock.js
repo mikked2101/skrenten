@@ -2,20 +2,21 @@ import React from "react";
 import { DateTime } from "luxon";
 
 function Clock() {
-  const dateTime = DateTime.local().setLocale("nb-NO");
+  const dateTime = DateTime.local().setLocale("en-NO");
 
   return (
     <div className="clock">
-      <h2 className="time">
+      <h1 className="time">
         {dateTime.toLocaleString(DateTime.TIME_24_SIMPLE)}
-      </h2>
-      <h2 className="date">
+      </h1>
+      <h5 className="date">
         {dateTime.toLocaleString({
           weekday: "long",
           day: "numeric",
           month: "long",
         })}
-      </h2>
+      </h5>
+      <h5 className="week">Week {DateTime.now().weekNumber}</h5>
     </div>
   );
 }
